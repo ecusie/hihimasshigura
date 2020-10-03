@@ -13,7 +13,7 @@
 		jsp = "home.jsp";
 	}
 %>
-<frameset cols="200,*">
+<frameset rows="200,*">
 		<frame src="Menu.jsp" name="frame1" title="左フレーム" noresize>
 		<frame src="<%= jsp %>" name="frame2" title="右フレーム">
 </frameset>
