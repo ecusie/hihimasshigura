@@ -16,12 +16,12 @@ function clickBtn(page){
 <body>
 	<form action="Menu" method="post" target="frame2">
 		<input type="hidden" name="page" id="page" value=""></input>
-		<input type="image" src="image/homeIcon.png"  alt="home" onclick="clickBtn('/home.jsp')" width="190" vspace="2"></input>
-		<input type="image" src="image/osusume.png"   alt="home" onclick="clickBtn('/osusume.jsp')" width="190" vspace="2"></input>
-		<input type="image" src="image/counter.png"   alt="home" onclick="clickBtn('/hihicounter.jsp')" width="190" vspace="2"></input>
-		<input type="image" src="image/btn057_05.png" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
-		<input type="image" src="image/btn057_05.png" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
-		<input type="image" src="image/btn057_05.png" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/homeIcon.png" %>"  alt="home" onclick="clickBtn('/page/Home/home.jsp')" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/osusume.png" %>"   alt="home" onclick="clickBtn('/page/Osusume/osusume.jsp')" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/counter.png" %>"   alt="home" onclick="clickBtn('/page/Counter/hihicounter.jsp')" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/btn057_05.png" %>" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/btn057_05.png" %>" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
+		<input type="image" src="<%= request.getContextPath() + "/image/btn057_05.png" %>" alt="home" onclick="clickBtn()" width="190" vspace="2"></input>
 	</form>
 </body>
 </html>

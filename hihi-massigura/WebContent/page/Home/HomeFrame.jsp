@@ -10,11 +10,11 @@
 <%
 	String jsp = request.getParameter("menubtn");
 	if (jsp == null){
-		jsp = "home.jsp";
+		jsp = "page/Home/home.jsp";
 	}
 %>
 <frameset rows="200,*">
-		<frame src="Menu.jsp" name="frame1" title="左フレーム" noresize>
+		<frame src="page/Menu/Menu.jsp" name="frame1" title="左フレーム" noresize>
 		<frame src="<%= jsp %>" name="frame2" title="右フレーム">
 </frameset>
 <body>

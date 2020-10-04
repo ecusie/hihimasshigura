@@ -21,7 +21,7 @@ public class LoginServlrt extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext context = getServletContext();
-		RequestDispatcher dispatchar = context.getRequestDispatcher("/Login.jsp");
+		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Login/Login.jsp");
 		dispatchar.forward(request, response);
 	}
 
@@ -30,7 +30,7 @@ public class LoginServlrt extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext context = getServletContext();
-		RequestDispatcher dispatchar = context.getRequestDispatcher("/HomeFrame.jsp");
+		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Home/HomeFrame.jsp");
 		dispatchar.forward(request, response);
 	}
 

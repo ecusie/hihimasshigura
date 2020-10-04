@@ -6,15 +6,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
+<!-- Loading Bootstrap -->
+ <link href="<%= request.getContextPath() + "/css/vendor/bootstrap.min.css" %>" rel="stylesheet">
+
+<!-- Loading Flat UI -->
+<link href="<%= request.getContextPath() + "/css/flat-ui.css" %>" rel="stylesheet">
 </head>
 <body>
-<div align="center">
-	<form action="LoginServlrt" method="post">
-		<h1>ログインフォーム</h1>
-		ユーザー名
-		<input type="text" name="user">
-		<input type="submit" name="sousin" value="login">
-	</form>
+<div class="container">
+	<div class="login">
+		<div class="login-screen">
+			<div class="login-icon">
+				<img src="<%= request.getContextPath() + "/images/login/homeIcon.png" %>" alt="Welcome to Mail App" />
+				<h4>Welcome to <small>ヒヒまっしぐら</small></h4>
+			</div>
+
+			<div class="login-form">
+				<div class="form-group">
+				<input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name" />
+				<label class="login-field-icon fui-user" for="login-name"></label>
+			</div>
+
+			<div class="form-group">
+				<input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+			</div>
+				<form name="form_name"action="LoginServlrt" method="post">
+					<a class="btn btn-primary btn-lg btn-block" href="javascript:form_name.submit()">Log in</a>
+					<a class="login-link" href="javascript:form_name.submit()">Lost your password?</a>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 </html>
