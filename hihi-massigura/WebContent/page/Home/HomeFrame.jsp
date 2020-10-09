@@ -13,9 +13,12 @@
 		jsp = "page/Home/home.jsp";
 	}
 %>
-<frameset rows="200,*">
-		<frame src="page/Menu/Menu.jsp" name="frame1" title="左フレーム" noresize>
-		<frame src="<%= jsp %>" name="frame2" title="右フレーム">
+<frameset rows="100,*" frameborder="0">
+		<frame src="page/Menu/Top.jsp" name="frame1" title="上フレーム" noresize>
+		<frameset cols="200,*" frameborder="0">
+			<frame src="page/Menu/Menu.jsp" name="frame2" title="左フレーム" noresize>
+			<frame src="<%= jsp %>" name="frame3" title="右フレーム">
+		</frameset>
 </frameset>
 <body>
 
