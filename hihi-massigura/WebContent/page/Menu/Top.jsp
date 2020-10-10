@@ -15,7 +15,7 @@ function clickBtn(page){
 <body>
 <form action="Menu" method="post" target="frame3">
 	<input type="hidden" name="page" id="page" value=""></input>
-	<input type="image" src="<%= request.getContextPath() + "/images/home/lhomeIcon.png" %>"  alt="home" onclick="clickBtn('/page/Home/home.jsp')" height="80"></input>
+	<input type="image" src="<%= request.getContextPath() + "/images/home/lhomeIcon.png" %>" height="80"></input>
 </form>
 </body>
 </html>

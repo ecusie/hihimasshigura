@@ -18,6 +18,7 @@ public class Menu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("アクセス");
 		String forwordPage = request.getParameter("page");
 		System.out.println(forwordPage);
 		ServletContext context = getServletContext();
