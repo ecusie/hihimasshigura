@@ -29,7 +29,6 @@ public class DBOperation {
 		try {
 			PreparedStatement statement = con.prepareStatement(sql);
 	        result = statement.executeQuery();
-	        result.next();
 		}catch (Exception e) {
 		}
         return result;

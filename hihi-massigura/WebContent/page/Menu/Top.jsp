@@ -13,9 +13,9 @@ function clickBtn(page){
 }
 </script>
 <body>
-<form action="Menu" method="post" target="frame3">
+<form name="form_name" target="frame3" action="/hihi_masshigura/Menu" method="post">
 	<input type="hidden" name="page" id="page" value=""></input>
-	<input type="image" src="<%= request.getContextPath() + "/images/home/lhomeIcon.png" %>" height="80"></input>
+	<input type="image" src="/hihi_masshigura/images/home/homeIcon.png" onclick="clickBtn('/page/Osusume/osusume.jsp')"/>
 </form>
 </body>
 </html>

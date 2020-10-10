@@ -1,4 +1,4 @@
-package hensei;
+package guide;
 
 import java.io.IOException;
 
@@ -11,15 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HenseiTop
+ * Servlet implementation class GuideTop
  */
-@WebServlet("/HenseiTop")
-public class HenseiTop extends HttpServlet {
+@WebServlet("/GuideTop")
+public class GuideTop extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String selectedFruit = request.getParameter("optionsRadios");
+		request.setAttribute("optionsRadios", selectedFruit);
 		ServletContext context = getServletContext();
-		RequestDispatcher dispatchar = context.getRequestDispatcher("/Lucifer.jsp");
+		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Osusume/osusume.jsp");
 		dispatchar.forward(request, response);
 	}
 
