@@ -44,7 +44,7 @@ function clickBtn(page){
 					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Home/None.jsp')"><strong>掲示板</strong><span>Bulletin board</span></a>
 					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Home/None.jsp')"><strong>アンケート</strong><span>questionnaire</span></a>
 					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Home/None.jsp')"><strong>リンク集</strong><span>Link collection</span></a>
-					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Home/None.jsp')"><strong>その他</strong><span>Other</span></a>
+					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Game/otherTop.jsp')"><strong>その他</strong><span>Other</span></a>
 					<li><a href="javascript:form_name.submit()" onclick="clickBtn('/page/Home/None.jsp')"><strong>問い合わせ</strong><span>Contact</span></a>
 
 						</ul>
