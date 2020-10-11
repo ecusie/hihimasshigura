@@ -18,10 +18,14 @@ public class GuideListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String selectedFruit = request.getParameter("optionsRadios");
-		request.setAttribute("optionsRadios", selectedFruit);
+		request.setCharacterEncoding("UTF-8");
+		String enemyID = request.getParameter("enemyID");
+		String enemyName = request.getParameter("enemyName");
+		String page = request.getParameter("page");
+		request.setAttribute("enemyID", enemyID);
+		request.setAttribute("enemyName", enemyName);
 		ServletContext context = getServletContext();
-		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Osusume/osusume.jsp");
+		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Guide/" + page + ".jsp");
 		dispatchar.forward(request, response);
 	}
 

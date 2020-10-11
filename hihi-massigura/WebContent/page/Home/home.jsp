@@ -5,19 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="<%= request.getContextPath() + "/css/style.css" %>" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
-<p><font size="30">ほーむ</font></p>
-<p>
-最近の更新<br>
-　・ヒヒカウンターの追加<br>
-　・おすすめ編成の追加<br>
-　・おすすめ編成にルシファー編成の追加<br>
-　・～～～～～～～～～～～～～<br>
-　・～～～～～～～～～～～～～<br>
-　・～～～～～～～～～～～～～<br>
-</p>
+<div id="wrapper">
+		<div id="mainBanner">
+			<img src="<%= request.getContextPath() + "/images/home/icon.jpg" %>" alt="ヒヒまっしぐら！！団アイコン"width="35%" height="35%">
+	</div>
 
+	<section class="content">
+		<h3 class="heading">更新情報</h3>
+		<article class="post">
+			<p><img src="images/banners/sample.jpg" alt="" width="260" height="113" class="alignright" />ここに文章</p>
+		</article>
+	</section>
+</div>
 </body>
 </html>

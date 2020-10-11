@@ -1,4 +1,4 @@
-package guide;
+package menu;
 
 import java.io.IOException;
 
@@ -11,17 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GuideTop
+ * Servlet implementation class MenuServlet
  */
-@WebServlet("/GuideTop")
-public class GuideTop extends HttpServlet {
+@WebServlet("/MenuServlet")
+public class MenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String selectedFruit = request.getParameter("optionsRadios");
-		request.setAttribute("optionsRadios", selectedFruit);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String forwordPage = request.getParameter("page");
 		ServletContext context = getServletContext();
-		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Osusume/osusume.jsp");
+		RequestDispatcher dispatchar = context.getRequestDispatcher(forwordPage);
 		dispatchar.forward(request, response);
 	}
 

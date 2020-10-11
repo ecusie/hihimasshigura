@@ -6,7 +6,7 @@ import java.util.List;
 
 import comon.DBOperation;
 
-public class SortOsusume {
+public class SortGuide {
 	public enum EnemyElement{
 		無属性,
 		火属性,
@@ -25,9 +25,9 @@ public class SortOsusume {
 		高難易度,
 		その他
 	}
-	ArrayList<ArrayList<String>> enemyList = new ArrayList<ArrayList<String>>();
+	ArrayList<ArrayList<String[]>> enemyList = new ArrayList<ArrayList<String[]>>();
 	Boolean type;
-	public SortOsusume(Boolean type) {
+	public SortGuide(Boolean type) {
 		this.type = type;
 		DBOperation db = new DBOperation();
 		String sql = "SELECT * FROM enemy";
@@ -38,36 +38,16 @@ public class SortOsusume {
 		}
 		int n = 0;
 		if (type) {
-			n = 2;
+			n = 3;
 		}else {
-			n = 1;
+			n = 2;
 		}
 		try {
 			while(result.next()) {
-				String[] strs = { result.getString("enemy_name"), result.getString("enemy_element"), result.getString("enemy_type") };
-				switch(strs[n]) {
-					case "0":
-						enemyList.get(0).add(strs[0]);
-						break;
-					case "1":
-						enemyList.get(1).add(strs[0]);
-						break;
-					case "2":
-						enemyList.get(2).add(strs[0]);
-						break;
-					case "3":
-						enemyList.get(3).add(strs[0]);
-						break;
-					case "4":
-						enemyList.get(4).add(strs[0]);
-						break;
-					case "5":
-						enemyList.get(5).add(strs[0]);
-						break;
-					case "6":
-						enemyList.get(6).add(strs[0]);
-						break;
-				}
+				String[] strs = { result.getString("enemy_id"), result.getString("enemy_name"), result.getString("enemy_element"), result.getString("enemy_type") };
+				int num = Integer.parseInt(strs[n]);
+				String[] enemy = { strs[0], strs[1]};
+				enemyList.get(num).add(enemy);
 			}
 		}catch(Exception e) {
 
@@ -76,9 +56,10 @@ public class SortOsusume {
 
 	}
 
-	public ArrayList<ArrayList<String>> getList(){
+	public ArrayList<ArrayList<String[]>> getList(){
 		return enemyList;
 	}
+
 	public String getLabel(int index) {
 		if (type) {
 			EnemyType[] values = EnemyType.values();
