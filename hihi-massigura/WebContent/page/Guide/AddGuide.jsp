@@ -42,24 +42,10 @@ function clickBtn(id, name){
 			<div class="form-group">
 				<textarea class="form-control" rows="3" name="massege"></textarea>
 			</div>
-			<h4>画像</h4>
-<%
-			for(int i = 0;i < 3;i++)
-			{
-%>
+			<h4>URL</h4>
 			<div class="form-group">
-				<div class="fileinput fileinput-new" data-provides="fileinput">
-					<span class="btn btn-primary btn-embossed btn-file">
-						<span class="fileinput-new"><span class="fui-upload"></span>&nbsp;&nbsp;Attach File</span>
-						<span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
-						<input type="file" name="image0">
-					</span>
-					<span class="fileinput-filename"></span>
-				</div>
+				<input type="text" class="form-control" placeholder="Text input" name="url">
 			</div>
-<%
-			}
-%>
 			<button type="submit" class="btn btn-primary" onclick="clickBtn('<%= enemyID %>', '<%= enemyName %>')">新規作成</button>
 		</form>
 	</div>

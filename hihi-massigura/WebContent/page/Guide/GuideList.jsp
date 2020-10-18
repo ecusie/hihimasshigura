@@ -15,7 +15,13 @@
 <link href="<%= request.getContextPath() + "/css/flat-ui.css" %>" rel="stylesheet">
 </head>
 <script>
-function clickBtn(id, name, page){
+function clickBtn(id, name, count, page){
+	document.getElementById("count").setAttribute("value",count);
+	document.getElementById("enemyID").setAttribute("value",id);
+	document.getElementById("enemyName").setAttribute("value",name);
+	document.getElementById("page").setAttribute("value",page);
+}
+function clickBtn2(id, name, page){
 	// 値を取得
 	document.getElementById("enemyID").setAttribute("value",id);
 	document.getElementById("enemyName").setAttribute("value",name);
@@ -34,26 +40,28 @@ function clickBtn(id, name, page){
 <p>
 	<%= enemyName %>
 </p>
+<form role="form" target="frame3" action="/hihi_masshigura/GuideListServlet" method="post">
 <%
+	int count = 0;
 	while(result.next()){
-		String[] str = new String[2];
+		count++;
+		String title ="";
 		try{
-			String[] str2 = { result.getString(0), result.getString(5) };
-			str = str2;
+			title = result.getString("title");
 		}catch(Exception e){
 		}
 %>
 	<p>
-		<button type="submit" class="btn btn-primary" onclick="clickBtn('<%= str[0] %>', '<%= str[1] %>')"><%= str[1] %></button>
+		<button type="submit" class="btn btn-primary" onclick="clickBtn('<%= enemyID %>', '<%= enemyName %>', '<%= count %>', 'Guide')"><%= title %></button>
 	</p>
 <%
 	}
 %>
-<form role="form" target="frame3" action="/hihi_masshigura/GuideListServlet" method="post">
 	<input type="hidden" name="enemyID" id="enemyID" value=""></input>
 	<input type="hidden" name="enemyName" id="enemyName" value=""></input>
+	<input type="hidden" name="count" id="count" value=""></input>
 	<input type="hidden" name="page" id="page" value=""></input>
-	<button type="submit" class="btn btn-primary" onclick="clickBtn('<%= enemyID %>', '<%= enemyName %>', 'AddGuide')">新規作成</button>
+	<button type="submit" class="btn btn-primary" onclick="clickBtn2('<%= enemyID %>', '<%= enemyName %>', 'AddGuide')">新規作成</button>
 </form>
 
 </div>

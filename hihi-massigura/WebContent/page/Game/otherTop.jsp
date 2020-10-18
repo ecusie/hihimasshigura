@@ -16,6 +16,8 @@ function clickBtn(page){
 <form name="form_name" target="frame3" action="/hihi_masshigura/MenuServlet" method="post">
 	<input type="hidden" name="page" id="page" value=""></input>
 	<button type="submit" class="btn btn-primary" onclick="clickBtn('/page/Game/RBB.jsp')">RRB</button>
+	<button type="submit" class="btn btn-primary" onclick="clickBtn('/page/Game/AbeNoMask.jsp')">AbeNoMask</button>
+	<button type="submit" class="btn btn-primary" onclick="clickBtn('/page/Game/PPAP.jsp')">PPAP</button>
 </form>
 </body>
 </html>

@@ -21,6 +21,7 @@ public class DBOperation {
             Class.forName("org.mariadb.jdbc.Driver");  // <- 修正
             con = DriverManager.getConnection(url, user, pass);
         } catch (Exception e) {
+        	System.out.println("Exception:" + e.getMessage());
         }
 	}
 	//SQLを実行しその結果を返す
@@ -30,6 +31,7 @@ public class DBOperation {
 			PreparedStatement statement = con.prepareStatement(sql);
 	        result = statement.executeQuery();
 		}catch (Exception e) {
+			System.out.println("Exception:" + e.getMessage());
 		}
         return result;
 	}
@@ -38,6 +40,17 @@ public class DBOperation {
 		try {
 			con.close();
 		}catch (Exception e) {
+			System.out.println("Exception:" + e.getMessage());
 		}
+	}
+
+	public void INSERTSet(String sql) {
+		try {
+			PreparedStatement statement = con.prepareStatement(sql);
+			int num = statement.executeUpdate(sql);
+		}catch (Exception e) {
+			System.out.println("Exception:" + e.getMessage());
+		}
+
 	}
 }

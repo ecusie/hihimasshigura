@@ -22,8 +22,13 @@ public class GuideListServlet extends HttpServlet {
 		String enemyID = request.getParameter("enemyID");
 		String enemyName = request.getParameter("enemyName");
 		String page = request.getParameter("page");
+		System.out.println(page);
 		request.setAttribute("enemyID", enemyID);
 		request.setAttribute("enemyName", enemyName);
+		if (page.equals("Guide")) {
+			String count = request.getParameter("count");
+			request.setAttribute("count", count);
+		}
 		ServletContext context = getServletContext();
 		RequestDispatcher dispatchar = context.getRequestDispatcher("/page/Guide/" + page + ".jsp");
 		dispatchar.forward(request, response);
